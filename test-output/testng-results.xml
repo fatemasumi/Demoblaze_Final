@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-04T18:12:28 PDT" name="Default suite" finished-at="2022-05-04T18:12:42 PDT" duration-ms="13862">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:dBFTestRunner.DBFTestRunner@c267ef4]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2022-05-04T18:12:28 PDT" name="Default test" finished-at="2022-05-04T18:12:42 PDT" duration-ms="13862">
+      <class name="dBFTestRunner.DBFTestRunner">
+        <test-method is-config="true" signature="setup()[pri:0, instance:dBFTestRunner.DBFTestRunner@c267ef4]" started-at="2022-05-04T18:12:28 PDT" name="setup" finished-at="2022-05-04T18:12:29 PDT" duration-ms="1401" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:dBFTestRunner.DBFTestRunner@c267ef4]" started-at="2022-05-04T18:12:29 PDT" name="setUpClass" finished-at="2022-05-04T18:12:29 PDT" duration-ms="242" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6a0cbc6f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:dBFTestRunner.DBFTestRunner@c267ef4]" started-at="2022-05-04T18:12:29 PDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-05-04T18:12:41 PDT" duration-ms="11678" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user can send message"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Validate contact Feature]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at org.testng.Assert.assertTrue(Assert.java:55)
+at dBFActions.ContactAction.sentMessageSuccessfully(ContactAction.java:52)
+at dBFStepDefinations.ContactStepdef.validates_message_is_sent(ContactStepdef.java:57)
+at ✽.Validates message is sent(file:///C:/Users/12065/eclipse-workspace/DemoBlazeFinal/src/java/Resources/DBFFeatures/contact.feature:30)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:dBFTestRunner.DBFTestRunner@c267ef4]" started-at="2022-05-04T18:12:41 PDT" name="tearDownClass" finished-at="2022-05-04T18:12:41 PDT" duration-ms="241" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method is-config="true" signature="closeApplication()[pri:0, instance:dBFTestRunner.DBFTestRunner@c267ef4]" started-at="2022-05-04T18:12:41 PDT" name="closeApplication" finished-at="2022-05-04T18:12:42 PDT" duration-ms="262" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- dBFTestRunner.DBFTestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/reporting.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber-JVM Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber-JVM Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="feature-overview.html">Features</a></li>
+        <li role="presentation" ><a href="tag-overview.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="step-overview.html">Steps</a></li>
+        <li role="presentation" ><a href="failures-overview.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" id="build-info">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-1">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Project</th>
+                          <th>Number</th>
+                        <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="info">
+            <td>DemoBlazeFinal</td>
+                          <td>1</td>
+                        <td>26 Apr 2022, 15:38</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="report-lead" class="container-fluid>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Steps Statistics</h2>
+              <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+          </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="summary">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+              <table id="tablesorter" class="stats-table table-hover">
+
+          <thead>
+            <tr class="header">
+              <th>Implementation</th>
+              <th>Occurrences</th>
+              <th>Duration</th>
+              <th>Average</th>
+              <th>Ratio</th>
+            </tr>
+          </thead>
+
+          <tbody>
+                          <tr>
+                <td class="location">dBFStepDefinations.AboutUsStepdef.about_us_window_closed_and_navigated_to_home_page()</td>
+                <td>2</td>
+                <td class="duration" data-value="52935700">052ms</td>
+                <td class="duration" data-value="26467850">026ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.AboutUsStepdef.click_on_about_us()</td>
+                <td>5</td>
+                <td class="duration" data-value="18572814300">18s 572ms</td>
+                <td class="duration" data-value="3714562860">3s 714ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.AboutUsStepdef.click_on_close_button()</td>
+                <td>1</td>
+                <td class="duration" data-value="51647100">051ms</td>
+                <td class="duration" data-value="51647100">051ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.AboutUsStepdef.click_on_x_button()</td>
+                <td>1</td>
+                <td class="duration" data-value="45488400">045ms</td>
+                <td class="duration" data-value="45488400">045ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.AboutUsStepdef.click_the_play_video_button()</td>
+                <td>1</td>
+                <td class="duration" data-value="51376600">051ms</td>
+                <td class="duration" data-value="51376600">051ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.AboutUsStepdef.click_the_play_video_icon()</td>
+                <td>1</td>
+                <td class="duration" data-value="61538000">061ms</td>
+                <td class="duration" data-value="61538000">061ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.AboutUsStepdef.user_launch(java.lang.String)</td>
+                <td>5</td>
+                <td class="duration" data-value="5566009800">5s 566ms</td>
+                <td class="duration" data-value="1113201960">1s 113ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.AboutUsStepdef.user_validate_video_played()</td>
+                <td>1</td>
+                <td class="duration" data-value="41573000">041ms</td>
+                <td class="duration" data-value="41573000">041ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.AboutUsStepdef.user_validate_video_replayed()</td>
+                <td>1</td>
+                <td class="duration" data-value="25499900">025ms</td>
+                <td class="duration" data-value="25499900">025ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.AboutUsStepdef.user_validate_window()</td>
+                <td>1</td>
+                <td class="duration" data-value="23806200">023ms</td>
+                <td class="duration" data-value="23806200">023ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.click_on_add_to_cart_button_accept_pop_up()</td>
+                <td>5</td>
+                <td class="duration" data-value="11273545200">11s 273ms</td>
+                <td class="duration" data-value="2254709040">2s 254ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.click_on_cart_button()</td>
+                <td>7</td>
+                <td class="duration" data-value="1859230000">1s 859ms</td>
+                <td class="duration" data-value="265604285">265ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.click_on_galaxy_s6()</td>
+                <td>5</td>
+                <td class="duration" data-value="816303200">816ms</td>
+                <td class="duration" data-value="163260640">163ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.click_on_place_order_button()</td>
+                <td>1</td>
+                <td class="duration" data-value="44004000">044ms</td>
+                <td class="duration" data-value="44004000">044ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.launch(java.lang.String)</td>
+                <td>16</td>
+                <td class="duration" data-value="17884456000">17s 884ms</td>
+                <td class="duration" data-value="1117778500">1s 117ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.verify_Place_order_button_displayed_on_cart_page()</td>
+                <td>1</td>
+                <td class="duration" data-value="35143100">035ms</td>
+                <td class="duration" data-value="35143100">035ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.verify_get_in_about_us_is_displayed_on_the_bottom_of_the_cart_page()</td>
+                <td>1</td>
+                <td class="duration" data-value="30435300">030ms</td>
+                <td class="duration" data-value="30435300">030ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.verify_get_in_touch_is_displayed_on_the_bottom_of_the_cart_page()</td>
+                <td>1</td>
+                <td class="duration" data-value="23030200">023ms</td>
+                <td class="duration" data-value="23030200">023ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.verify_place_order_form_displayed()</td>
+                <td>1</td>
+                <td class="duration" data-value="2059250300">2s 059ms</td>
+                <td class="duration" data-value="2059250300">2s 059ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.verify_product_picture_is_displayed()</td>
+                <td>1</td>
+                <td class="duration" data-value="472975800">472ms</td>
+                <td class="duration" data-value="472975800">472ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.verify_product_price_is_displayed()</td>
+                <td>1</td>
+                <td class="duration" data-value="721948400">721ms</td>
+                <td class="duration" data-value="721948400">721ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.CartStepdef.verify_product_title_is_displayed()</td>
+                <td>1</td>
+                <td class="duration" data-value="287449700">287ms</td>
+                <td class="duration" data-value="287449700">287ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.ContactStepdef.clicks_on_contact()</td>
+                <td>4</td>
+                <td class="duration" data-value="180334600">180ms</td>
+                <td class="duration" data-value="45083650">045ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.ContactStepdef.types_contact_email_contact_name_and_message()</td>
+                <td>1</td>
+                <td class="duration" data-value="7129687900">7s 129ms</td>
+                <td class="duration" data-value="7129687900">7s 129ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.ContactStepdef.user_clicked_close_button()</td>
+                <td>1</td>
+                <td class="duration" data-value="21718700">021ms</td>
+                <td class="duration" data-value="21718700">021ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.ContactStepdef.user_clicked_send_messsage_button()</td>
+                <td>2</td>
+                <td class="duration" data-value="221201400">221ms</td>
+                <td class="duration" data-value="110600700">110ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.ContactStepdef.validate_contact_button_is_clickable()</td>
+                <td>1</td>
+                <td class="duration" data-value="18998100">018ms</td>
+                <td class="duration" data-value="18998100">018ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.ContactStepdef.validates_close_button_is_clickable()</td>
+                <td>1</td>
+                <td class="duration" data-value="20587900">020ms</td>
+                <td class="duration" data-value="20587900">020ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.ContactStepdef.validates_message_is_sent()</td>
+                <td>1</td>
+                <td class="duration" data-value="3007955000">3s 007ms</td>
+                <td class="duration" data-value="3007955000">3s 007ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.ContactStepdef.validates_send_message_button_is_clickable()</td>
+                <td>1</td>
+                <td class="duration" data-value="6827700">006ms</td>
+                <td class="duration" data-value="6827700">006ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.clicks_on_about_us_button()</td>
+                <td>1</td>
+                <td class="duration" data-value="51611100">051ms</td>
+                <td class="duration" data-value="51611100">051ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.clicks_on_cart_button()</td>
+                <td>1</td>
+                <td class="duration" data-value="248484300">248ms</td>
+                <td class="duration" data-value="248484300">248ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.clicks_on_contact_button()</td>
+                <td>1</td>
+                <td class="duration" data-value="39220400">039ms</td>
+                <td class="duration" data-value="39220400">039ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.clicks_on_home_button()</td>
+                <td>1</td>
+                <td class="duration" data-value="1507039200">1s 507ms</td>
+                <td class="duration" data-value="1507039200">1s 507ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.clicks_on_laptops()</td>
+                <td>1</td>
+                <td class="duration" data-value="2060758900">2s 060ms</td>
+                <td class="duration" data-value="2060758900">2s 060ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.clicks_on_log_in_button()</td>
+                <td>1</td>
+                <td class="duration" data-value="43226500">043ms</td>
+                <td class="duration" data-value="43226500">043ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.clicks_on_monitors()</td>
+                <td>1</td>
+                <td class="duration" data-value="2064324400">2s 064ms</td>
+                <td class="duration" data-value="2064324400">2s 064ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.clicks_on_phones()</td>
+                <td>1</td>
+                <td class="duration" data-value="2047672700">2s 047ms</td>
+                <td class="duration" data-value="2047672700">2s 047ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.clicks_on_sign_up_button()</td>
+                <td>1</td>
+                <td class="duration" data-value="36762400">036ms</td>
+                <td class="duration" data-value="36762400">036ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.user_launch(java.lang.String)</td>
+                <td>14</td>
+                <td class="duration" data-value="16286017200">16s 286ms</td>
+                <td class="duration" data-value="1163286942">1s 163ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.validate_about_us_button_is_clickable()</td>
+                <td>1</td>
+                <td class="duration" data-value="1141874600">1s 141ms</td>
+                <td class="duration" data-value="1141874600">1s 141ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.validate_cart_button_is_clickable()</td>
+                <td>1</td>
+                <td class="duration" data-value="852456200">852ms</td>
+                <td class="duration" data-value="852456200">852ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.validate_contact_button_is_clickable()</td>
+                <td>1</td>
+                <td class="duration" data-value="1195557400">1s 195ms</td>
+                <td class="duration" data-value="1195557400">1s 195ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.validate_homapage_is_displayed()</td>
+                <td>2</td>
+                <td class="duration" data-value="51100700">051ms</td>
+                <td class="duration" data-value="25550350">025ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.validate_laptops_is_displayed()</td>
+                <td>1</td>
+                <td class="duration" data-value="2039047800">2s 039ms</td>
+                <td class="duration" data-value="2039047800">2s 039ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.validate_log_in_button_is_clickable()</td>
+                <td>1</td>
+                <td class="duration" data-value="943600400">943ms</td>
+                <td class="duration" data-value="943600400">943ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.validate_monitors_is_displayed()</td>
+                <td>1</td>
+                <td class="duration" data-value="2040218400">2s 040ms</td>
+                <td class="duration" data-value="2040218400">2s 040ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.validate_phones_is_displayed()</td>
+                <td>1</td>
+                <td class="duration" data-value="2039593200">2s 039ms</td>
+                <td class="duration" data-value="2039593200">2s 039ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.HomePageStepdef.validate_sign_up_button_is_clickable()</td>
+                <td>1</td>
+                <td class="duration" data-value="950325600">950ms</td>
+                <td class="duration" data-value="950325600">950ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.LoginStepdef.click_login()</td>
+                <td>5</td>
+                <td class="duration" data-value="190504400">190ms</td>
+                <td class="duration" data-value="38100880">038ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.LoginStepdef.i_click_login_button()</td>
+                <td>5</td>
+                <td class="duration" data-value="215196200">215ms</td>
+                <td class="duration" data-value="43039240">043ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.LoginStepdef.user_enters_and(java.lang.String,java.lang.String)</td>
+                <td>5</td>
+                <td class="duration" data-value="1201581300">1s 201ms</td>
+                <td class="duration" data-value="240316260">240ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.LoginStepdef.verify_login_is_not_successfull()</td>
+                <td>3</td>
+                <td class="duration" data-value="9042437400">9s 042ms</td>
+                <td class="duration" data-value="3014145800">3s 014ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.LoginStepdef.verify_login_successfull()</td>
+                <td>2</td>
+                <td class="duration" data-value="46059600">046ms</td>
+                <td class="duration" data-value="23029800">023ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.SignUpStepdef.click_sign_up()</td>
+                <td>4</td>
+                <td class="duration" data-value="12186371100">12s 186ms</td>
+                <td class="duration" data-value="3046592775">3s 046ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.SignUpStepdef.i_click_sign_up_button()</td>
+                <td>4</td>
+                <td class="duration" data-value="188503500">188ms</td>
+                <td class="duration" data-value="47125875">047ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.SignUpStepdef.user_types_and(java.lang.String,java.lang.String)</td>
+                <td>4</td>
+                <td class="duration" data-value="1065133900">1s 065ms</td>
+                <td class="duration" data-value="266283475">266ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.SignUpStepdef.verify_sign_up_is_not_successfull()</td>
+                <td>3</td>
+                <td class="duration" data-value="9055831900">9s 055ms</td>
+                <td class="duration" data-value="3018610633">3s 018ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">dBFStepDefinations.SignUpStepdef.verify_sign_up_successfull()</td>
+                <td>1</td>
+                <td class="duration" data-value="3010666400">3s 010ms</td>
+                <td class="duration" data-value="3010666400">3s 010ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                      </tbody>
+
+          <tfoot class="total">
+            <tr>
+              <td>59</td>
+              <td>141</td>
+              <td class="duration">2m 22s 448ms</td>
+              <td class="duration">1s 010ms</td>
+              <td>Totals</td>
+            </tr>
+          </tfoot>
+
+        </table>
+          </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

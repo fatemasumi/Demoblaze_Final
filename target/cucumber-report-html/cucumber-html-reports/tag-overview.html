@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/reporting.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber-JVM Reports  - Tags Overview</title>
+
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+
+    var chartData = {
+        labels: ["@aboutUSFeature","@aboutUs","@aboutUsButton","@aboutUsWindow","@cartButton","@cartFeature","@close","@closeWindow","@contactButton","@getInTouch","@home","@homeButton","@homePageFeature","@invalidCredential","@invalidCredentialSignUp","@laptops","@logInButton","@logInFeature","@monitors","@phones","@placeOrder","@placeOrderClicks","@playButton","@playIcon","@productPicture","@productPrice","@productTitle","@sendMessage","@sendMesssageButton","@signUpButton","@signUpFeature","@validCredential","@validCredentialSignUp","@xButton"],
+        datasets: [
+            {
+                label: 'Passed',
+                backgroundColor: "#92DD96",
+                data: [100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00]
+            },
+            {
+                label: 'Failed',
+                backgroundColor: "#F2928C",
+                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
+            },
+            {
+                label: 'Skipped',
+                backgroundColor: "#8AF",
+                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
+            },
+            {
+                label: 'Pending',
+                backgroundColor: "#F5F28F",
+                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
+            },
+            {
+                label: 'Undefined',
+                backgroundColor: "#F5B975",
+                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
+            }
+        ]
+    };
+
+    var ctx = document.getElementById("tags-chart");
+    window.myBar = new Chart(ctx, {
+        type: 'bar',
+        data: chartData,
+        options: {
+            tooltips: {
+                mode: 'label'
+            },
+            responsive: true,
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    stacked: true
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
+            }
+        }
+    });
+
+});  </script>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber-JVM Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="feature-overview.html">Features</a></li>
+        <li role="presentation"      class="active" ><a href="tag-overview.html">Tags</a></li>
+        <li role="presentation" ><a href="step-overview.html">Steps</a></li>
+        <li role="presentation" ><a href="failures-overview.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" id="build-info">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-1">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Project</th>
+                          <th>Number</th>
+                        <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="info">
+            <td>DemoBlazeFinal</td>
+                          <td>1</td>
+                        <td>26 Apr 2022, 15:38</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="report-lead" class="container-fluid>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Tags Statistics</h2>
+              <p>The following graph shows passing and failing statistics for tags</p>
+          </div>
+  </div>
+</div>
+
+
+  <div class="container-fluid" id="charts">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <canvas id="tags-chart" height="50"></canvas>
+      </div>
+    </div>
+  </div>
+
+<br>
+<div class="container-fluid" id="summary">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+              
+<table id="tablesorter" class="stats-table table-hover">
+  <thead>
+  <tr class="header dont-sort">
+        <th></th>
+    <th colspan="3">Scenarios</th>
+    <th colspan="6">Steps</th>
+    <th colspan="2">Totals</th>
+  </tr>
+  <tr>
+    <th>Tag</th>
+        <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="total">Total</th>
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="skipped">Skipped</th>
+    <th class="pending">Pending</th>
+    <th class="undefined">Undefined</th>
+    <th class="total">Total</th>
+    <th>Duration</th>
+    <th>Status</th>
+  </tr>
+</thead>
+
+  <tbody>
+          <tr>
+        <td class="tagname"><a href="aboutUSFeature.html">@aboutUSFeature</a></td>
+        
+        <td  class="passed"    >5</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td      class="passed"    >19</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">19</td>
+        <td class="duration" data-value="24492689000">24s 492ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="aboutUs.html">@aboutUs</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="1462772500">1s 462ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="aboutUsButton.html">@aboutUsButton</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="2134873500">2s 134ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="aboutUsWindow.html">@aboutUsWindow</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="5285216700">5s 285ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="cartButton.html">@cartButton</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="2120306100">2s 120ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="cartFeature.html">@cartFeature</a></td>
+        
+        <td  class="passed"    >7</td>
+        <td >0</td>
+        <td class="total">7</td>
+        <td      class="passed"    >32</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">32</td>
+        <td class="duration" data-value="25280754700">25s 280ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="close.html">@close</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+        <td class="duration" data-value="1347779100">1s 347ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="closeWindow.html">@closeWindow</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+        <td class="duration" data-value="4786285900">4s 786ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="contactButton.html">@contactButton</a></td>
+        
+        <td  class="passed"    >5</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td      class="passed"    >19</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">19</td>
+        <td class="duration" data-value="18201847400">18s 201ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="getInTouch.html">@getInTouch</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="1261825400">1s 261ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="home.html">@home</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">2</td>
+        <td class="duration" data-value="1516381500">1s 516ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="homeButton.html">@homeButton</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="2634860400">2s 634ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="homePageFeature.html">@homePageFeature</a></td>
+        
+        <td  class="passed"    >10</td>
+        <td >0</td>
+        <td class="total">10</td>
+        <td      class="passed"    >29</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">29</td>
+        <td class="duration" data-value="30221305300">30s 221ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="invalidCredential.html">@invalidCredential</a></td>
+        
+        <td  class="passed"    >3</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td      class="passed"    >15</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">15</td>
+        <td class="duration" data-value="13402721800">13s 402ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="invalidCredentialSignUp.html">@invalidCredentialSignUp</a></td>
+        
+        <td  class="passed"    >3</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td      class="passed"    >15</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">15</td>
+        <td class="duration" data-value="23002090200">23s 002ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="laptops.html">@laptops</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="5094892500">5s 094ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="logInButton.html">@logInButton</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="1870181200">1s 870ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="logInFeature.html">@logInFeature</a></td>
+        
+        <td  class="passed"    >5</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td      class="passed"    >25</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">25</td>
+        <td class="duration" data-value="16060340400">16s 060ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="monitors.html">@monitors</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="5460861600">5s 460ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="phones.html">@phones</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="5316330100">5s 316ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="placeOrder.html">@placeOrder</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >5</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td class="duration" data-value="4250425500">4s 250ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="placeOrderClicks.html">@placeOrderClicks</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >6</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">6</td>
+        <td class="duration" data-value="6195248400">6s 195ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="playButton.html">@playButton</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+        <td class="duration" data-value="4790927300">4s 790ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="playIcon.html">@playIcon</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+        <td class="duration" data-value="4777515200">4s 777ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="productPicture.html">@productPicture</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >5</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td class="duration" data-value="4320869200">4s 320ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="productPrice.html">@productPrice</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >5</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td class="duration" data-value="4155548200">4s 155ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="productTitle.html">@productTitle</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >5</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td class="duration" data-value="3634065500">3s 634ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="sendMessage.html">@sendMessage</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >5</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td class="duration" data-value="11514158200">11s 514ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="sendMesssageButton.html">@sendMesssageButton</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+        <td class="duration" data-value="1524840700">1s 524ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="signUpButton.html">@signUpButton</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >3</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">3</td>
+        <td class="duration" data-value="1895668400">1s 895ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="signUpFeature.html">@signUpFeature</a></td>
+        
+        <td  class="passed"    >4</td>
+        <td >0</td>
+        <td class="total">4</td>
+        <td      class="passed"    >20</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">20</td>
+        <td class="duration" data-value="30368961800">30s 368ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="validCredential.html">@validCredential</a></td>
+        
+        <td  class="passed"    >2</td>
+        <td >0</td>
+        <td class="total">2</td>
+        <td      class="passed"    >10</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">10</td>
+        <td class="duration" data-value="2657618600">2s 657ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="validCredentialSignUp.html">@validCredentialSignUp</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >5</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td class="duration" data-value="7366871600">7s 366ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="xButton.html">@xButton</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+        <td class="duration" data-value="4852743900">4s 852ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+      </tbody>
+
+  <tfoot class="total">
+    <tr>
+      <td>34</td>
+            <td>69</td>
+      <td>0</td>
+      <td>69</td>
+      <td>279</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>279</td>
+      <td class="duration">4m 43s 259ms</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+            <td>100.00%</td>
+      <td>0.00%</td>
+      <td></td>
+      <td>100.00%</td>
+      <td>0.00%</td>
+      <td>0.00%</td>
+      <td>0.00%</td>
+      <td>0.00%</td>
+      <td></td>
+      <td></td>
+      <td>0.00%</td>
+    </tr>
+  </tfoot>
+</table>
+
+          </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
